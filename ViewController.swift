@@ -97,3 +97,9 @@ extension ViewController:CLLocationManagerDelegate {
   
 }
 
+extension ViewController: AnnotationViewDelegate {
+  func didTouch(annotationView: AnnotationView) {
+    print("Tapped view for POI: \(annotationView.titleLabel?.text)")
+  }
+}
+
