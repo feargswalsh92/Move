@@ -44,15 +44,18 @@ class AnnotationView: ARAnnotationView {
   }
   
   
-//  override func layoutSubviews() {
-//    super.layoutSubviews() {
-//      super.layoutSubviews()
-//      titleLabel?.frame = CGRect(x:10,y:0,width: self.frame.size.width,height: 30)
-//      distanceLabel?.frame = CGRect(x:10,y:30,width: self.frame.size.width,height: 20)
-//      
-//    }
+  //1
+  override func layoutSubviews() {
+    super.layoutSubviews()
+    titleLabel?.frame = CGRect(x: 10, y: 0, width: self.frame.size.width, height: 30)
+    distanceLabel?.frame = CGRect(x: 10, y: 30, width: self.frame.size.width, height: 20)
   }
-
+  
+  //2
+  override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+    delegate?.didTouch(annotationView: self)
+    }
+}
 
 
 
